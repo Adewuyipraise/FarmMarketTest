@@ -23,9 +23,15 @@
         <li><a href="#">Services</a></li>
       </ul>
     </nav>
+
+
     <section>
+      <div>
+        
+      </div>
       <div class="login">
-  <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login/SignUp</button>
+  <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">SignUp</button> &nbsp;&nbsp;&nbsp;
+  <button onclick="document.getElementById('id012').style.display='block'" style="width:auto;">Login</button>
 </div>
 
 
@@ -54,18 +60,48 @@
       <input type="password" placeholder="Enter Password" name="psw" required></p>
         
       <button type="submit">Submit</button>
-      <p>Already Have an Account<a href="#">"Login"</a></p>
-    </div>
+<!--       <p>Already Have an Account<a href="#id012">"Login"</a></p>
+ -->    </div>
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
     </div>
   </form>
 </div>
+
+
+<div id="id012" class="modal">
+  
+  <form class="modal-content animate" action="" method="post">
+    <div class="imgcontainer">
+      <h2>Login Form</h2>
+      <p>Enter Your Login Details</p>
+    </div>
+
+    <div class="container">
+      <p><label for="email"><b>E-mail or Phonenumber</b></label>
+      <input type="email" placeholder="Enter Your E-mail or Phonenumber" name="email" required></p>
+
+      <p><label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required></p>
+        
+      <button type="submit">Submit</button>
+<!--       <p>Don't Have an Account<a href=".modal">"Signup"</a></p>
+ -->    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id012').style.display='none'" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+
     </section>
     <script>
 // Get the modal
 var modal = document.getElementById('id01');
+
+var modal = document.getElementById('id012');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -73,6 +109,7 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
 </script>
   </body>
 </html>
