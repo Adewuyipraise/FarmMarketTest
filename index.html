@@ -6,8 +6,9 @@
     <title>FarmMarket</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <link rel="icon" href="logo.jpeg" type="image/x-icon">
+    <link rel="icon" href="images/logo.jpeg" type="image/x-icon">
   </head>
   <body>
     <nav>
@@ -15,37 +16,40 @@
       <label for="check" class="checkbtn">
         <i class="fas fa-bars"></i>
       </label>
-      <a href="#"><img src="logo.jpeg" alt="farmMarket logo" style="border-radius: 50%; height: 70px; width: 70px; float: left; margin-top: 5px; margin-left: 20px;"></a>
+      <a href="#"><img src="images/logo.jpeg" alt="farmMarket logo" style="border-radius: 50%; height: 70px; width: 70px; float: left; margin-top: 5px; margin-left: 20px;"></a>
       <ul>
-        <li><a class="active" href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Services</a></li>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="services.html">Services</a></li>
       </ul>
     </nav>
 
 
-    <section>
+<section class="#home`">
       <div>
         
       </div>
-      <div class="login">
+<div class="login">
   <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">SignUp</button> &nbsp;&nbsp;&nbsp;
   <button onclick="document.getElementById('id012').style.display='block'" style="width:auto;">Login</button>
 </div>
 
 
 <div id="id01" class="modal">
-  
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Form">&times;</span>
   <form class="modal-content animate" action="" method="post">
     <div class="imgcontainer">
       <h2>Sign Up Form</h2>
-      <p>Fill In the Fields Correctly</p>
+      <p>Fill In the Fields Correctly to Create Your Account</p>
     </div>
-
+    <hr>
     <div class="container">
-      <p><label for="fname"><b>Fullname</b></label>
-      <input type="text" placeholder="Enter Fullname" name="fname" required></p>
+      <p><label for="fname"><b>First Name</b></label>
+      <input type="text" placeholder="Enter First Name" name="fname" required></p>
+
+      <p><label for="lname"><b>Last Name</b></label>
+      <input type="text" placeholder="Enter last Name" name="lname" required></p>
 
       <p><label for="email"><b>E-mail</b></label>
       <input type="email" placeholder="example@mail.com" name="email" required></p>
@@ -58,46 +62,65 @@
 
       <p><label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required></p>
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms, Condtions & Privacy</a>.</p>
         
       <button type="submit">Submit</button>
-<!--       <p>Already Have an Account<a href="#id012">"Login"</a></p>
- -->    </div>
+ </div>
+  <div class="Forgottenpsw">
+      <p>
+        <a href="#"><i class="fa fa-google fa-fw"></i>Sign Up with Google+ </a>
+      </p>
+    </div>
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <button onclick={closeAndOpenNext1()} style="width:auto;">Already Have an Account Login</button>
     </div>
   </form>
+
 </div>
 
 
 <div id="id012" class="modal">
-  
+   <span onclick="document.getElementById('id012').style.display='none'" class="close" title="Close Form">&times;</span>
   <form class="modal-content animate" action="" method="post">
     <div class="imgcontainer">
       <h2>Login Form</h2>
       <p>Enter Your Login Details</p>
     </div>
-
+    <hr>
     <div class="container">
       <p><label for="email"><b>E-mail or Phonenumber</b></label>
-      <input type="email" placeholder="Enter Your E-mail or Phonenumber" name="email" required></p>
+      <input type="text" placeholder="Enter Your E-mail or Phonenumber" name="email" required></p>
 
       <p><label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required></p>
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
         
       <button type="submit">Submit</button>
-<!--       <p>Don't Have an Account<a href=".modal">"Signup"</a></p>
- -->    </div>
+    </div>
+    <div class="Forgottenpsw">
+      <p><a href="#">Forgotten Password?</a></p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <p><a href="#"><i class="fa fa-google fa-fw"></i>Sign in with Google </a></p>
+    </div>
 
     <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id012').style.display='none'" class="cancelbtn">Cancel</button>
+     <button type="button" onclick="document.getElementById('id012').style.display='none'" class="cancelbtn">Cancel</button>
+     <button onclick={closeAndOpenNext()}  style="width:auto;">Don't Have an Account SignUp</button>
     </div>
   </form>
 </div>
+</section>
 
 
-    </section>
-    <script>
+
+<script>
 // Get the modal
 var modal = document.getElementById('id01');
 
@@ -108,6 +131,22 @@ window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+}
+
+
+//when the user clicks on don't have an account
+function closeAndOpenNext() {
+    console.log("Called function")
+    document.getElementById('id01').style.display='block'
+    document.getElementById('id012').style.display='none'
+}
+
+
+// when the user clicks on Already have an account
+function closeAndOpenNext1() {
+    console.log("Called function")
+    document.getElementById('id012').style.display='block'
+    document.getElementById('id01').style.display='none'
 }
 
 </script>
